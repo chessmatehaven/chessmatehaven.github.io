@@ -14,6 +14,7 @@
      @font-face{
       font-family: Alegreya;
       src: url('fonts/Alegreya-Regular.ttf');
+      font-display: swap;
     }
     *{
       box-sizing: border-box;
@@ -48,6 +49,20 @@
       border-radius: 15px;
       display: grid;
     }
+    .articles{
+      padding-left:1.15em;
+      padding-top:1.15em;
+    }
+    @media screen and (min-width:720px){
+        ul{
+            margin: 2.25em;
+            gap: 2.25em;
+        }
+        .articles{
+            padding-left:2.25em;
+            padding-top:2.25em;
+        }
+    }
   </style>
 </head>
 <body>
@@ -55,8 +70,8 @@
   <h1>Chessmate Haven</h1>
 </header>
 <main>
+  <h2 class="articles">Articles:</h2>
   <ul>
-      <h2 style="text-indent: 12px">Articles:</h2>
     <li>
       <a href="articles/Alekhine's Defense: Provoking Weaknesses in White's Position.html">
         <h2>Alekhine's Defense: Provoking Weaknesses in White's Position</h2>
