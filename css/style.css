@@ -1,6 +1,7 @@
 @font-face{
   font-family: Alegreya;
   src: url('../fonts/Alegreya-Regular.ttf');
+  font-display: swap;
 }
 *{
   box-sizing: border-box;
@@ -35,9 +36,11 @@ footer{
   text-align: center;
 }
 .homeButtonDiv{
-  transform: translate(-50%, -50%);
   position: fixed;
+  left: -5px;
   bottom: 5%;
+  transform: translate(-50% -50%);
+  display: grid;
 }
 .homeButtonDiv button{
   padding: 10px 14px 10px 14px;
@@ -50,3 +53,14 @@ footer{
   margin-left: -3px;
   outline: none;
 }
+@media screen and (min-width:720px){
+        body{
+            margin: 0em 5.75em 0em 5.75em;
+        }
+        ul, ol{
+            margin: 0em 2.75em 0em 2.75em;
+        }
+        h1, h2, h3, h4, h5, h6, p, li{
+            margin: 2.75em 0em 2.75em 0em;
+        }
+    }
