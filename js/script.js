@@ -10,11 +10,15 @@ var words = text.split(/\s+/);
 // Get the total word count
 var wordCount = words.length;
 
-var additionalContent = document.getElementById('additionalContent');
+let additionalContent = document.getElementById('additionalContent');
+
+let moreScripts = document.getElementById('moreScripts');
 
 let wordCountDiv = document.createElement('div');
 
 let homeButton = document.createElement('div');
+
+let commentsDiv = document.createElement('div');
 
 homeButton.className = 'homeButtonDiv';
 
@@ -22,15 +26,30 @@ homeButton.addEventListener('click', () => {
   window.location.href = '../index.html';
 });
 
-wordCountDiv.innerHTML =
-`
+wordCountDiv.innerHTML = `
 <p class="wordCount">Word Count: ${wordCount}</p>
 `;
 
-homeButton.innerHTML =
-`
+homeButton.innerHTML = `
 <button class="homeButton">Home</button>
 `;
 
-additionalContent.append(wordCountDiv);
-additionalContent.append(homeButton);
+commentsDiv.innerHTML = '<div id="disqus_thread"></div>';
+
+let commentSDK = document.createElement('script');
+
+commentSDK.src = '//chessmate-haven.disqus.com/count.js';
+
+commentSDK.addEventListener('load', function() {
+    // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://chessmate-haven.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+});
+commentSDK.async = 'true';
+
+additionalContent.appendChild(wordCountDiv);
+additionalContent.appendChild(homeButton);
+additionalContent.appendChild(commentsDiv);
+moreScripts.appendChild(commentSDK);
