@@ -33,7 +33,7 @@ wordCountDiv.innerHTML = `
 homeButton.innerHTML = `
 <button class="homeButton">Home</button>
 `;
-/*
+
 commentsDiv.innerHTML = '<div id="disqus_thread"></div>';
 
 let commentSDK = document.createElement('script');
@@ -48,8 +48,8 @@ commentSDK.addEventListener('load', function() {
     (d.head || d.body).appendChild(s);
 });
 commentSDK.async = 'true';
-*/
+
 additionalContent.appendChild(wordCountDiv);
 additionalContent.appendChild(homeButton);
-//additionalContent.appendChild(commentsDiv);
-//moreScripts.appendChild(commentSDK);
+additionalContent.appendChild(commentsDiv);
+moreScripts.appendChild(commentSDK);
