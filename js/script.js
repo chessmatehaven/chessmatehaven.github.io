@@ -18,6 +18,8 @@ let wordCountDiv = document.createElement('div');
 
 let homeButton = document.createElement('div');
 
+let shareDiv = document.createElement('div');
+
 let commentsDiv = document.createElement('div');
 
 let progressBarDiv = document.createElement('div');
@@ -66,17 +68,41 @@ progressBarScript.addEventListener('load', () => {
 
 window.addEventListener('scroll', function() {
   const windowHeight = window.innerHeight;
+  
   const fullHeight = document.documentElement.scrollHeight;
+  
   const scrolled = window.scrollY;
 
   const progressWidth = (scrolled / (fullHeight - windowHeight)) * 100;
+  
   progressBarDiv.style.width = progressWidth + '%';
 
 });
+// AddToAny BEGIN
 
-additionalContent.appendChild(wordCountDiv);
-additionalContent.appendChild(homeButton);
-additionalContent.appendChild(progressBarDiv);
+shareDiv.innerHTML =
+`
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_email"></a>
+</div>
+`;
+
+let shareScript = document.createElement('script');
+
+shareScript.src = 'https://static.addtoany.com/menu/page.js';
+
+shareScript.async = 'true';
+
+// AddToAny END
+
+moreScripts.append(shareScript);
+additionalContent.append(wordCountDiv);
+additionalContent.append(homeButton);
+additionalContent.append(progressBarDiv);
+additionalContent.append(shareDiv);
 /*
 additionalContent.appendChild(commentsDiv);
 moreScripts.appendChild(commentSDK);
