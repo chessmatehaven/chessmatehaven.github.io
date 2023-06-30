@@ -20,6 +20,10 @@ let homeButton = document.createElement('div');
 
 let commentsDiv = document.createElement('div');
 
+let progressBarDiv = document.createElement('div');
+
+progressBarDiv.className = 'progressBar';
+
 homeButton.className = 'homeButtonDiv';
 
 homeButton.addEventListener('click', () => {
@@ -34,6 +38,7 @@ homeButton.innerHTML = `
 <button class="homeButton">Home</button>
 `;
 
+/*
 commentsDiv.innerHTML = '<div id="disqus_thread"></div>';
 
 let commentSDK = document.createElement('script');
@@ -49,7 +54,30 @@ commentSDK.addEventListener('load', function() {
 });
 commentSDK.async = 'true';
 
+
+let progressBarScript = document.createElement('script');
+progressBarScript.defer = 'true';
+progressBarScript.async = 'true';
+
+progressBarScript.addEventListener('load', () => {
+  
+});
+*/
+
+window.addEventListener('scroll', function() {
+  const windowHeight = window.innerHeight;
+  const fullHeight = document.documentElement.scrollHeight;
+  const scrolled = window.scrollY;
+
+  const progressWidth = (scrolled / (fullHeight - windowHeight)) * 100;
+  progressBarDiv.style.width = progressWidth + '%';
+
+});
+
 additionalContent.appendChild(wordCountDiv);
 additionalContent.appendChild(homeButton);
+additionalContent.appendChild(progressBarDiv);
+/*
 additionalContent.appendChild(commentsDiv);
 moreScripts.appendChild(commentSDK);
+*/
