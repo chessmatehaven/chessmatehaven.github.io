@@ -1,11 +1,11 @@
 @font-face{
-  font-family: Alegreya;
-  src: url('../fonts/Alegreya-Regular.ttf');
+  font-family: SF Wonder Comic;
+  src: url('../fonts/SF_Wonder_Comic.ttf');
   font-display: swap;
 }
 *{
   box-sizing: border-box;
-  font-family: Alegreya, Arial, Helvetica, sans-serif;
+  font-family: SF Wonder Comic, Arial, Helvetica, sans-serif;
   list-style: square;
   padding: 0px;
   margin: 0px;
@@ -16,16 +16,18 @@ body{
   color: #CCCCC0;
 }
 ul, ol{
-  margin: 0em .95em 0em .95em;
+  margin-left: 1em;
 }
 header{
   border-bottom: 4px solid #CCCCC0;
 }
-h1, h2, h3, h4, h5, h6, p, li{
+h1, h2, h3, h4, h5, h6{
   margin: .75em 0em .75em 0em;
   line-height: 1.5;
 }
 p, li{
+  margin: .75em 0em .75em 0em;
+  line-height: 1.5;
   font-size: 18px;
   text-align: justify;
 }
@@ -53,18 +55,25 @@ footer{
   margin-left: -3px;
   outline: none;
 }
+/*
 #disqus_thread{
     border-top: 4px solid #CCCCC0;
     padding-top: 1.75em;
 }
+*/
+.progressBar{
+  height: 5px;
+  background-color: #CCCCC0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+}
 @media screen and (min-width:720px){
         body{
-            margin: 0em 5.75em 0em 5.75em;
+            margin: 0em 7em 0em 7em;
         }
         ul, ol{
             margin: 0em 2.75em 0em 2.75em;
-        }
-        h1, h2, h3, h4, h5, h6, p, li{
-            margin: 2.75em 0em 2.75em 0em;
         }
     }
