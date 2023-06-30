@@ -69,6 +69,18 @@ footer{
   left: 0;
   width: 0;
 }
+.a2a_kit{
+    display: flex;
+    transform: translate(-50% -50%);
+    border-top-left-radius: 5px;
+    border: 2px solid #CCCCC0;
+    background: #010050;
+    position: fixed;
+    padding: 4px;
+    right: -4px;
+    bottom: -2px;
+    gap: 8px;
+}
 @media screen and (min-width:720px){
         body{
             margin: 0em 7em 0em 7em;
