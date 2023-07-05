@@ -1,11 +1,11 @@
 @font-face{
-  font-family: SF Wonder Comic;
-  src: url('../fonts/SF_Wonder_Comic.ttf');
+  font-family: IFE;
+  src: url('../fonts/feENrm28C.otf');
   font-display: swap;
 }
 *{
   box-sizing: border-box;
-  font-family: SF Wonder Comic, Arial, Helvetica, sans-serif;
+  font-family: IFE, Arial, Helvetica, sans-serif;
   list-style: square;
   padding: 0px;
   margin: 0px;
@@ -27,14 +27,15 @@ h1, h2, h3, h4, h5, h6{
 }
 p, li{
   margin: .75em 0em .75em 0em;
+  text-align: justify;
   line-height: 1.5;
   font-size: 18px;
-  text-align: justify;
 }
 footer{
   margin-bottom: 115px;
 }
 .wordCount{
+  display: none;
   text-align: center;
 }
 .homeButtonDiv{
