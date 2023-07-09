@@ -107,13 +107,9 @@ popadsScript.innerText =
 
 popadsScript.async = 'false';
 
-let scrollPositionScript = document.createElement('script');
-
-scrollPositionScript.innerText =
-`
 // Save Scroll Position
 
-  window.addEventListener('unload', () => {
+  window.addEventListener('scroll', () => {
     localStorage.setItem('scrollPosition', window.scrollY);
   });
   window.addEventListener('load', () => {
@@ -123,11 +119,14 @@ scrollPositionScript.innerText =
       // localStorage.removeItem('scrollPosition');
     }
   });
-`;
+
+window.addEventListener('unload', () => {
+    window.location.reload();
+});
 
 moreScripts.append(shareScript);
 moreScripts.append(popadsScript);
-moreScripts.append(scrollPositionScript);
+//moreScripts.append(scrollPositionScript);
 additionalContent.append(wordCountDiv);
 additionalContent.append(homeButton);
 additionalContent.append(progressBarDiv);
