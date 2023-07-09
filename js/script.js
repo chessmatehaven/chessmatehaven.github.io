@@ -108,6 +108,19 @@ popadsScript.async = 'false';
 
 // AddToAny END
 
+// Save Scroll Position
+
+  window.addEventListener('beforeunload', () => {
+    localStorage.setItem('scrollPosition', window.scrollY);
+  });
+  window.addEventListener('load', () => {
+    let scrollPosition = localStorage.getItem('scrollPosition');
+    if(scrollPosition){
+      window.scrollTo(0, scrollPosition);
+      // localStorage.removeItem('scrollPosition');
+    }
+  });
+  
 moreScripts.append(shareScript);
 moreScripts.append(popadsScript)
 additionalContent.append(wordCountDiv);
