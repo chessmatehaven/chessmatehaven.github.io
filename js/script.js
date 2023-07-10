@@ -110,19 +110,22 @@ popadsScript.async = 'false';
 // Save Scroll Position
 
   window.addEventListener('scroll', () => {
-    localStorage.setItem('scrollPosition', window.scrollY);
+    
+    let currentUrl = window.location.href;
+    
+    localStorage.setItem('scrollPosition_' + currentUrl, window.scrollY);
   });
   window.addEventListener('load', () => {
-    let scrollPosition = localStorage.getItem('scrollPosition');
+      
+    let currentUrl = window.location.href;
+    
+    let scrollPosition = localStorage.getItem('scrollPosition_' + currentUrl);
+    
     if(scrollPosition){
       window.scrollTo(0, scrollPosition);
       // localStorage.removeItem('scrollPosition');
     }
   });
-
-window.addEventListener('unload', () => {
-    window.location.reload();
-});
 
 moreScripts.append(shareScript);
 moreScripts.append(popadsScript);
